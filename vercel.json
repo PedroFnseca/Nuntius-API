@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "builds": {
-    "src": "src/main.ts",
-    "use": "@vecel/node"
-  },
+  "builds":[
+    {
+      "src": "src/main.ts",
+      "use": "@vecel/node"
+    }
+  ],
   "routes": [
     {
       "src": "./(.*)",
