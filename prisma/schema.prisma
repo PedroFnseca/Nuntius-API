@@ -6,6 +6,18 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model Notification{
+  id          String    @id
+  content     String
+  recipientId String
+  category    String
+  canceledAt  DateTime?
+  readAt      DateTime?
+  createdAt   DateTime  @default(now())
+
+  @@index([recipientId])
 }
